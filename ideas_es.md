@@ -16,21 +16,36 @@
 - Reunir 100 monedas del sillón.
 - Juntar 100 matches en Tinder que no sean bots o desaparezcan
 - Células de 0 a 100
-- División celular: diferentes tipos de células en pantalla que al clicar en ellas se dividen. Algunas se dividen arriba y abajo, otras en horizontal, otras se congelan, etc. Gana el primer jugador en llegar a 100 células de su color.
-    - Las células pueden ser todas iguales y el jugador lo que obtiene son hasta 3 cartas en un lado de la pantalla (con los diferentes tipos de divisiones o bonus) y el jugador clica en una carta y la aplica en una célula.
-    - Jugador vs jugador o jugador vs IA por turnos.
-    - ¿Cómo aseguro que los jugadores estén obligados a interactuar entre sí en lugar de irse cada uno por su lado?
-    - ¿Tamaño del mapa?
-    - Carta de añadir célula.
-    - Carta de crecimiento.
-        - Al chocar las células entre sí en base a su fuerza / vida se decide quién se come a quién.
-    - ¿Carta de mover en una dirección un grupo de células?
-    - ¿Cartas para putear al enemigo (pe. decrecimiento, virus, etc)?
-    - ¿Alguna condición de que las células deben estar cerca unas de otras para vivir?
-    - Carta de división /2 siempre disponible. Otras divisiones alternativas (pe. dividir en 4 células, dividir manteniendo la fuerza en los hijos, etc) salen aleatoriamente.
-    - ¿Las células no deberían colisionar entre ellas de alguna manera?
-        - ¿Si las nuevas células chocan con otra propia se unen a esta?
-        - O puedo hacer que sólo uno de los hijos se mueva de sitio y no puedas hacerlo si no hay espacio / no se va a unir a otra célula.
-    - Previsualizar resultado **inmediato** de acción al clicar y doble clic para confirmar (para mantener mismo comportamiento en móvil y PC).
-    - ¿Cómo hago que sea entretenido jugar contra IA o entorno sin volverme loco?
-    - ¿Qué hago con los bordes de la pantalla? ¿Las células chocan con él y rebotan? ¿Y si dos hijos vuelven a chocarse entre sí al rebotar uno o ambos contra la pared?
+
+## División celular
+
+### Resumen
+
+Juego por turnos en el que dos jugadores compiten para ser el primero en generar 100 células a base de añadir células y dividir las existentes.
+
+### Mecánicas
+
+- Juego por turnos.
+- Jugador vs jugador o jugador vs IA.
+- En el primer turno cada jugador recibe al menos una carta / acción de crear célula y tres cartas aleatorias.
+- En turnos siguientes el jugador recibe una carta de división si tiene al menos una célula o una de crear célula y tres cartes aleatorias.
+- Las cartas / acciones se juegan sobre una célula propia o enemiga según el caso.
+- Acciones
+    - Crear célula: se elige cualquier sitio **vacío** del mapa y se crea ahí.
+    - División: se elige una célula y se elige el sitio hacia el que se divide. Una nueva célula aparece y ambas hijas tienen la mitad de poder / energía que el padre.
+        - Puede haber variantes donde la célula se divide en más partes, o las partes conservan la misma energía que el padre, etc.
+    - Aumento de energía: se elige una célula y se aumenta su energía en X.
+    - Disminución de energía: se elige una célula y se aumenta su energía en X.
+    - Movimiento: se elige una célula (¿o grupo?) y una dirección (¿colisiones?).
+- Cuando una célula choca con una célula enemiga se restan sus energías. La que menos tiene desaparece y la otra disminuye su energía.
+
+# Problemáticas / por decidir
+
+- ¿Tamaño del mapa?
+- ¿Alguna condición de que las células deben estar cerca unas de otras para vivir?
+- ¿Las células no deberían colisionar entre ellas de alguna manera?
+    - ¿Si las nuevas células chocan con otra propia se unen a esta?
+    - O puedo hacer que sólo uno de los hijos se mueva de sitio y no puedas hacerlo si no hay espacio / no se va a unir a otra célula.
+- Previsualizar resultado **inmediato** de acción al clicar y doble clic para confirmar (para mantener mismo comportamiento en móvil y PC).
+- ¿Cómo hago que sea entretenido jugar contra IA o entorno sin volverme loco?
+- ¿Qué hago con los bordes de la pantalla? ¿Las células chocan con él y rebotan? ¿Y si dos hijos vuelven a chocarse entre sí al rebotar uno o ambos contra la pared?
