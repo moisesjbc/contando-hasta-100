@@ -1,7 +1,7 @@
 extends Area2D
 
 
-var number = 0
+var number = 1
 
 
 func _ready():
