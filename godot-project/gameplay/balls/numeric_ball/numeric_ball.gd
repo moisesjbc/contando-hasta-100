@@ -35,3 +35,7 @@ func evaluate(expression_str: String):
 	expression.parse(expression_str, ["x"])
 	var result = expression.execute([value])
 	set_value(result)
+
+
+func has_expected_value():
+	return value == expected_value
