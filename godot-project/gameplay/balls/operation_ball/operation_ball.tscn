@@ -27,5 +27,8 @@ margin_left = -31.0
 margin_top = -32.0
 margin_right = 32.0
 margin_bottom = 8.0
+mouse_filter = 2
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
+
+[connection signal="input_event" from="." to="." method="_on_operation_ball_input_event"]

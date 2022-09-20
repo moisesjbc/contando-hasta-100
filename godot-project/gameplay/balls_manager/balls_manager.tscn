@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://gameplay/balls_manager/balls_manager.gd" type="Script" id=3]
+
+[node name="balls_manager" type="Node"]
+script = ExtResource( 3 )
+
+[node name="balls" type="Node" parent="."]
