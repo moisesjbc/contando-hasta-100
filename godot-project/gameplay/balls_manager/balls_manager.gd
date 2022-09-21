@@ -5,6 +5,8 @@ var operation_ball_scene = preload("res://gameplay/balls/operation_ball/operatio
 
 var selected_operation_ball = null
 
+signal all_balls_right
+
 var first_ball_value = 0
 var n_balls = 3
 var n_right_balls = 1
@@ -25,14 +27,15 @@ var operations = [
 func set_level(new_first_ball_value: int, new_n_balls: int):
 	first_ball_value = new_first_ball_value
 	new_n_balls = new_n_balls
-	n_right_balls = 1
 	
-	_reset_level()
+	reset()
 
 
-func _reset_level():
+func reset():
 	var SRC_X = 200
 	var DST_X = 1080
+	
+	n_right_balls = 1
 	
 	var distance_between_balls = (DST_X - SRC_X) / (n_balls - 1)
 	
@@ -67,7 +70,7 @@ func _reset_level():
 			numeric_ball.set_value(i)
 
 func _ready():
-	_reset_level()
+	reset()
 
 func _evaluate_expression(expression_str: String, value: int):
 	var expression = Expression.new()
@@ -82,9 +85,13 @@ func _on_numeric_ball_selected(selected_ball):
 		if selected_ball.has_expected_value():
 			n_right_balls += 1
 			if n_right_balls == n_balls:
-				set_level(first_ball_value + n_balls - 1, n_balls)
+				emit_signal("all_balls_right")
 		else:
-			_reset_level()
+			reset()
 	
 func _on_operation_ball_selected(ball):
 	selected_operation_ball = ball
+
+
+func next_level():
+	set_level(first_ball_value + n_balls - 1, n_balls)
