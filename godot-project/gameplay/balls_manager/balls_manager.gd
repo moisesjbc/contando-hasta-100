@@ -47,7 +47,7 @@ func reset():
 
 	for i in range(first_ball_value, first_ball_value + n_balls):
 		var numeric_ball = numeric_ball_scene.instance()
-		numeric_ball.global_position = Vector2(SRC_X + (i - first_ball_value) * distance_between_balls, 300)
+		numeric_ball.global_position = Vector2(SRC_X + (i - first_ball_value) * distance_between_balls, 350)
 		$balls.add_child(numeric_ball)
 		numeric_ball.set_expected_value(i)
 		numeric_ball.connect("numeric_ball_selected", self, "_on_numeric_ball_selected")
