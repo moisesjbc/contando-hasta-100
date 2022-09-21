@@ -6,3 +6,11 @@
 script = ExtResource( 3 )
 
 [node name="balls" type="Node" parent="."]
+
+[node name="respawn_region" type="Node2D" parent="."]
+
+[node name="top_left_corner" type="Position2D" parent="respawn_region"]
+position = Vector2( 110, 117 )
+
+[node name="bottom_right_coner" type="Position2D" parent="respawn_region"]
+position = Vector2( 1170, 599 )

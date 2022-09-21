@@ -62,13 +62,20 @@ func reset():
 
 			var operation_ball = operation_ball_scene.instance()
 			
-			operation_ball.global_position = Vector2(randi() % 1000, randi() % 700)
+			operation_ball.global_position = _get_random_respawn_position()
 			$balls.add_child(operation_ball)
 			operation_ball.set_operation(current_operation["expression_label"] % constant, current_operation["expression_str"] % constant)
 			operation_ball.connect("operation_ball_selected", self, "_on_operation_ball_selected")
 		else:
 			numeric_ball.set_value(i)
 
+
+func _get_random_respawn_position():
+	return Vector2(
+		$respawn_region/top_left_corner.global_position.x + randi() % int($respawn_region/bottom_right_coner.global_position.x - $respawn_region/top_left_corner.global_position.x),
+		$respawn_region/top_left_corner.global_position.y + randi() % int($respawn_region/bottom_right_coner.global_position.y - $respawn_region/top_left_corner.global_position.y)
+	)
+	
 func _ready():
 	reset()
 
