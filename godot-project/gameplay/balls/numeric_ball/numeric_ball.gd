@@ -9,9 +9,9 @@ var expected_value = null
 
 func _update_color():
 	if value == expected_value:
-		modulate = Color.green
+		modulate = Color.greenyellow
 	else:
-		modulate = Color.red
+		modulate = Color.indianred
 
 
 func set_value(new_value: int):
