@@ -17,3 +17,10 @@ func set_operation(new_expression_label: String, new_expression_str: String):
 func _on_operation_ball_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && event.pressed):
 		emit_signal("operation_ball_selected", self)
+
+
+func set_highlight(highlight):
+	if highlight:
+		modulate = Color.orange
+	else:
+		modulate = Color.white

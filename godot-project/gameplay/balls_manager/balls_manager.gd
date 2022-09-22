@@ -97,7 +97,10 @@ func _on_numeric_ball_selected(selected_ball):
 			reset()
 	
 func _on_operation_ball_selected(ball):
+	if selected_operation_ball:
+		selected_operation_ball.set_highlight(false)
 	selected_operation_ball = ball
+	selected_operation_ball.set_highlight(true)
 
 
 func next_level():

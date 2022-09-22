@@ -18,6 +18,7 @@ custom_constants/margin_top = 10
 custom_constants/margin_left = 50
 
 [node name="time_bar" parent="GUI/margin_container" instance=ExtResource( 2 )]
+margin_bottom = 50.0
 
 [connection signal="all_balls_right" from="balls_manager" to="." method="_on_balls_manager_all_balls_right"]
 [connection signal="timeout" from="GUI/margin_container/time_bar" to="." method="_on_time_bar_timeout"]
