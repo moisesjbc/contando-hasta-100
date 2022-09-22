@@ -21,10 +21,6 @@ func reset():
 	current_time_in_seconds = total_time_in_seconds
 
 
-func next_level():
-	reset()
-
-
 func _update_value():
 	value = current_time_in_seconds / total_time_in_seconds * 100.0
 	
