@@ -10,7 +10,7 @@ script = ExtResource( 3 )
 [node name="respawn_region" type="Node2D" parent="."]
 
 [node name="top_left_corner" type="Position2D" parent="respawn_region"]
-position = Vector2( 110, 117 )
+position = Vector2( 150, 100 )
 
 [node name="bottom_right_coner" type="Position2D" parent="respawn_region"]
 position = Vector2( 1170, 599 )
