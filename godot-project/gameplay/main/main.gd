@@ -28,8 +28,6 @@ func _on_balls_manager_all_balls_right():
 
 
 func _on_balls_manager_number_selected(current_value):
-	print("current_value", current_value)
-	print("current_expected_value", current_expected_value)
 	if current_expected_value == current_value:
 		next_level()
 	else:

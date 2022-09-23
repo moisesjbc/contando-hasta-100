@@ -24,7 +24,7 @@ func reset():
 		var numeric_ball = numeric_ball_scene.instance()
 		numeric_ball.global_position = _get_random_respawn_position()
 		$balls.add_child(numeric_ball)
-		numeric_ball.set_value(i)
+		numeric_ball.set_value(i, right_value)
 		numeric_ball.connect("numeric_ball_selected", self, "_on_numeric_ball_selected")
 
 
