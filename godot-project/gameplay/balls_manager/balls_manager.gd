@@ -1,47 +1,18 @@
 extends Node
 
+signal number_selected
+
+var right_value = 0
 var numeric_ball_scene = preload("res://gameplay/balls/numeric_ball/numeric_ball.tscn")
-var operation_ball_scene = preload("res://gameplay/balls/operation_ball/operation_ball.tscn")
 
-var selected_operation_ball = null
-
-signal all_balls_right
-
-var first_ball_value = 0
-var n_numeric_balls = 3
-var n_extra_operation_balls = 3
-var n_right_balls = 1
-
-var operations = [
-	{
-		"expression_label": "+%d",
-		"expression_str": "x + %d",
-		"inverse_expression_str": "x - %d"
-	},
-	{
-		"expression_label": "-%d",
-		"expression_str": "x - %d",
-		"inverse_expression_str": "x + %d"
-	}
-]
-
-func set_level(new_first_ball_value: int, new_n_numeric_balls: int, new_n_extra_operation_balls: int):
-	first_ball_value = new_first_ball_value
-	n_numeric_balls = new_n_numeric_balls
-	n_extra_operation_balls = new_n_extra_operation_balls
-	
+func set_level(new_right_value: int):
+	right_value = new_right_value
 	reset()
 
 
 func reset():
-	selected_operation_ball = null
-
 	var SRC_X = 200
 	var DST_X = 1080
-	
-	n_right_balls = 1
-	
-	var distance_between_balls = (DST_X - SRC_X) / (n_numeric_balls - 1)
 	
 	randomize()
 	
@@ -49,37 +20,12 @@ func reset():
 		$balls.remove_child(ball)
 		ball.queue_free()
 
-	for i in range(first_ball_value, first_ball_value + n_numeric_balls):
+	for i in range(right_value - 3, right_value + 3):
 		var numeric_ball = numeric_ball_scene.instance()
-		numeric_ball.global_position = Vector2(SRC_X + (i - first_ball_value) * distance_between_balls, 350)
+		numeric_ball.global_position = _get_random_respawn_position()
 		$balls.add_child(numeric_ball)
-		numeric_ball.set_expected_value(i)
+		numeric_ball.set_value(i)
 		numeric_ball.connect("numeric_ball_selected", self, "_on_numeric_ball_selected")
-		
-		if i > first_ball_value:
-			var value = respawn_operation_ball(i)
-			numeric_ball.set_value(value)
-		else:
-			numeric_ball.set_value(i)
-
-	for _i in range(0, n_extra_operation_balls):
-		respawn_operation_ball(randi() % 5)
-
-
-func respawn_operation_ball(numeric_value: int):
-	var operation_index = randi() % len(operations)
-	var current_operation = operations[operation_index]
-			
-	var constant = 1 + randi() % 5
-	var value = _evaluate_expression(current_operation["inverse_expression_str"] % constant, numeric_value)
-	
-	var operation_ball = operation_ball_scene.instance()
-	operation_ball.global_position = _get_random_respawn_position()
-	$balls.add_child(operation_ball)
-	operation_ball.set_operation(current_operation["expression_label"] % constant, current_operation["expression_str"] % constant)
-	operation_ball.connect("operation_ball_selected", self, "_on_operation_ball_selected")
-	
-	return value
 
 
 func _get_random_respawn_position():
@@ -87,33 +33,9 @@ func _get_random_respawn_position():
 		$respawn_region/top_left_corner.global_position.x + randi() % int($respawn_region/bottom_right_coner.global_position.x - $respawn_region/top_left_corner.global_position.x),
 		$respawn_region/top_left_corner.global_position.y + randi() % int($respawn_region/bottom_right_coner.global_position.y - $respawn_region/top_left_corner.global_position.y)
 	)
-	
+
 func _ready():
 	reset()
 
-func _evaluate_expression(expression_str: String, value: int):
-	var expression = Expression.new()
-	expression.parse(expression_str, ["x"])
-	return expression.execute([value])
-
 func _on_numeric_ball_selected(selected_ball):
-	if selected_operation_ball:
-		selected_ball.evaluate(selected_operation_ball.expression_str)
-		selected_operation_ball.queue_free()
-		selected_operation_ball = null
-		if selected_ball.has_expected_value():
-			n_right_balls += 1
-			if n_right_balls == n_numeric_balls:
-				emit_signal("all_balls_right")
-		else:
-			reset()
-	
-func _on_operation_ball_selected(ball):
-	if selected_operation_ball:
-		selected_operation_ball.set_highlight(false)
-	selected_operation_ball = ball
-	selected_operation_ball.set_highlight(true)
-
-
-func last_ball_value():
-	return first_ball_value + n_numeric_balls - 1
+	emit_signal("number_selected", selected_ball.value)
