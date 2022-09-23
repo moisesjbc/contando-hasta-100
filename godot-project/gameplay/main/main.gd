@@ -27,6 +27,13 @@ func _on_time_bar_timeout():
 
 func _on_balls_manager_number_selected(current_value):
 	if current_expected_value == current_value:
-		next_level()
+		if not is_victory():
+			next_level()
+		else:
+			$GUI/center_container/game_over_panel.display(self, current_expected_value)
 	else:
 		$GUI/center_container/game_over_panel.display(self, current_expected_value)
+
+
+func is_victory():
+	return current_expected_value >= 10
