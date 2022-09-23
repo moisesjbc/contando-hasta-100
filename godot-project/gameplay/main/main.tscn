@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://gameplay/balls_manager/balls_manager.tscn" type="PackedScene" id=1]
-[ext_resource path="res://gameplay/gui/time_bar/time_bar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://gameplay/main/main.gd" type="Script" id=3]
 [ext_resource path="res://gameplay/gui/game_over_panel/game_over_panel.tscn" type="PackedScene" id=4]
 
@@ -12,15 +11,6 @@ script = ExtResource( 3 )
 
 [node name="GUI" type="Node" parent="."]
 
-[node name="margin_container" type="MarginContainer" parent="GUI"]
-anchor_right = 1.0
-custom_constants/margin_right = 50
-custom_constants/margin_top = 10
-custom_constants/margin_left = 50
-
-[node name="time_bar" parent="GUI/margin_container" instance=ExtResource( 2 )]
-margin_bottom = 50.0
-
 [node name="center_container" type="CenterContainer" parent="GUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -29,4 +19,3 @@ mouse_filter = 2
 [node name="game_over_panel" parent="GUI/center_container" instance=ExtResource( 4 )]
 
 [connection signal="number_selected" from="balls_manager" to="." method="_on_balls_manager_number_selected"]
-[connection signal="timeout" from="GUI/margin_container/time_bar" to="." method="_on_time_bar_timeout"]
