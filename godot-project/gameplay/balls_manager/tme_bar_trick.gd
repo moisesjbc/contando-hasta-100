@@ -10,7 +10,9 @@ func _ready():
 
 
 func set_active(active: bool):
-	$time_bar.disconnect("timeout", self, "_make_random_ball_visible")
+	if $time_bar.is_connected("timeout", self, "_make_random_ball_visible"):
+		$time_bar.disconnect("timeout", self, "_make_random_ball_visible")
+	
 	self.visible = active
 	if active:
 		random_ball = balls_manager.get_random_ball()
