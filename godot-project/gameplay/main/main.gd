@@ -38,4 +38,4 @@ func _on_balls_manager_number_selected(current_value):
 
 
 func is_victory():
-	return current_level >= 10
+	return current_level >= 20

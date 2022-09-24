@@ -31,6 +31,18 @@ var _level_configs = {
 	},
 	5: {
 		HINT_KEY: "Bueno, pero vayamos poco a poco. ¿Qué tal si te dejo a solas y nos vemos en el 10?",
+	},
+	11: {
+		HINT_KEY: "¡Hola de nuevo! ¿Cómo lo llevas?\nEspero que bien porque tengo malas noticias"
+	},
+	12: {
+		HINT_KEY: "A partir de ahora va a haber distraciones por el camino, ¡pero yo creo en ti!\n¡Pulsa ese 13 y sigamos!"
+	},
+	13: {
+		HINT_KEY: "¡Jajaja! Veo que no es difícil distraerte ;-)"
+	},
+	14: {
+		HINT_KEY: "Pero no nos confiemos, ¿ok?\n¡Bueno, pulsa ese 14 y nos vemos en el 20!"
 	}
 }
 
