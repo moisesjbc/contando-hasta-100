@@ -10,10 +10,10 @@ var LevelConfigKey = preload("res://gameplay/levels_config/levels_config.gd").Le
 func _ready():
 	# set_level(current_level)
 	# TODO: Remove development trick
-	for i in range(0, 20):
+	for i in range(0, 24):
 		current_level = i
 		$levels_config.get_level_config(i)
-	set_level(20)
+	set_level(24)
 	
 	
 func reset_hint():
@@ -36,7 +36,8 @@ func reset():
 	reset_hint()
 	$balls_manager.set_level(
 		current_level,
-		current_level_config[LevelConfigKey.N_EXTRA_VALUES]
+		current_level_config[LevelConfigKey.N_EXTRA_VALUES],
+		current_level_config[LevelConfigKey.TRICK]
 	)
 
 
@@ -61,7 +62,7 @@ func _on_balls_manager_number_selected(current_value):
 
 
 func is_victory():
-	return current_level >= 25
+	return current_level >= 35
 	
 	
 func get_random_number():

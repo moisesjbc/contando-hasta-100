@@ -67,7 +67,12 @@ var _level_configs = {
 	23: {
 		LevelConfigKey.HINT: "Ignora el fondo. Godot me lo cambia a veces.",
 		LevelConfigKey.TRICK: TrickType.BACKGROUND_NUMBER,
-		LevelConfigKey.GAME_OVER_TAUNT: "Ya sabía yo que ese fondo no era trigo limpio"
+		LevelConfigKey.GAME_OVER_TAUNT: "Ya sabía yo que ese fondo era una mala influencia"
+	},
+	28: {
+		LevelConfigKey.HINT: "¡QUE SE ESCAPA!",
+		LevelConfigKey.TRICK: TrickType.MOVING_BALL,
+		LevelConfigKey.GAME_OVER_TAUNT: "Vaya movida. Jajaja, ¿lo pillas? MOVIda por la bola que se MOVIa.\nVale, ha sido malo, pero al menos yo no he perdido la cuenta, ¿no?"
 	}
 }
 

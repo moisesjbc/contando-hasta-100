@@ -4,11 +4,14 @@ signal number_selected
 
 var right_value = 0
 var n_extra_values = 0
+var trick_type = null
 var numeric_ball_scene = preload("res://gameplay/balls/numeric_ball/numeric_ball.tscn")
+var TrickType = preload("res://globals/trick_type.gd").TrickType
 
-func set_level(new_right_value: int, new_n_extra_values: int):
+func set_level(new_right_value: int, new_n_extra_values: int, new_trick_type):
 	right_value = new_right_value
 	n_extra_values = new_n_extra_values
+	trick_type = new_trick_type
 	reset()
 	
 var all_respawn_positions = []
@@ -52,6 +55,11 @@ func reset():
 	
 	for i in range(right_value + 1, right_value + n_extra_values):
 		_instantiate_numeric_ball(i, right_value)
+		
+	if trick_type == TrickType.MOVING_BALL:
+		randomize()
+		var ball_index = randi() % $balls.get_child_count()
+		$balls.get_child(ball_index).move()
 
 
 func _get_random_respawn_position():
