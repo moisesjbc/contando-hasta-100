@@ -1,35 +1,38 @@
 extends Node2D
 
 
-var current_expected_value: int = 0
+var current_level: int = 0
+var current_level_config = {}
 
 
 func _ready():
-	reset()
+	set_level(current_level)
 
 
 func reset():
-	$balls_manager.set_level(current_expected_value)
+	$GUI/margin_container/hint_panel.set_hint(current_level_config[$levels_config.HINT_KEY])
+	$balls_manager.set_level(current_level)
 
 
-func set_level(current_expected_value):
-	self.current_expected_value = current_expected_value
+func set_level(current_level):
+	self.current_level_config = $levels_config.get_level_config(current_level)
+	self.current_level = current_level
 	reset()
 
 
 func next_level():
-	set_level(current_expected_value + 1)
+	set_level(current_level + 1)
 
 
 func _on_balls_manager_number_selected(current_value):
-	if current_expected_value == current_value:
+	if current_level == current_value:
 		if not is_victory():
 			next_level()
 		else:
-			$GUI/center_container/game_over_panel.display(self, current_expected_value)
+			$GUI/center_container/game_over_panel.display(self, current_level)
 	else:
-		$GUI/center_container/game_over_panel.display(self, current_expected_value)
+		$GUI/center_container/game_over_panel.display(self, current_level)
 
 
 func is_victory():
-	return current_expected_value >= 10
+	return current_level >= 10
