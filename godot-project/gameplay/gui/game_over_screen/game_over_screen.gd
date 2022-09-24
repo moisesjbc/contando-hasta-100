@@ -9,8 +9,8 @@ func display(new_main, selected_value, expected_value, taunt):
 	main = new_main
 		
 	if selected_value == expected_value:
-		$panel/margin_container/vbox_container/title.text = "¡VICTORIA!"
-		$panel/margin_container/vbox_container/summary.text = "¡Gracias por jugar!"
+		$panel/margin_container/vbox_container/title.text = "¡VICTORIA (*)!"
+		$panel/margin_container/vbox_container/summary.text = "(*) Al menos en esta demo. ¡Gracias por jugar!"
 	else:
 		$panel/margin_container/vbox_container/title.text = "Game over"
 		$panel/margin_container/vbox_container/summary.text = "Has seleccionado el {selected_value} pero tocaba el {expected_value}".format({

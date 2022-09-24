@@ -8,12 +8,12 @@ const TrickType = preload("res://globals/trick_type.gd").TrickType
 var LevelConfigKey = preload("res://gameplay/levels_config/levels_config.gd").LevelConfigKey
 
 func _ready():
-	# set_level(current_level)
+	set_level(current_level)
 	# TODO: Remove development trick
-	for i in range(0, 44):
-		current_level = i
-		$levels_config.get_level_config(i)
-	set_level(44)
+	#for i in range(0, 44):
+	#	current_level = i
+	#	$levels_config.get_level_config(i)
+	#set_level(44)
 	
 	
 func reset_hint():
@@ -67,7 +67,7 @@ func _on_balls_manager_number_selected(selected_value):
 
 
 func is_victory():
-	return current_level >= 55
+	return current_level >= 40
 
 
 func get_random_number():

@@ -26,18 +26,25 @@ var _level_configs = {
 		LevelConfigKey.HINT: "¡Guay, gracias!\n¿Y qué tal con el 1?"
 	},
 	2: {
-		LevelConfigKey.HINT: "¡Perfecto!¿Podrías clicar ahora en...?\n No me acuerdo, ¿cuál iba ahora?",
+		LevelConfigKey.HINT: "¡Perfecto!\n¿Ahora podrías darle al 2?",
 		LevelConfigKey.N_EXTRA_VALUES: 2,
 	},
 	3: {
+		LevelConfigKey.HINT: "0, 1, 2..., ¿adivinas cuál vendría ahora?",
+		LevelConfigKey.GAME_OVER_TAUNT: "No pasa nada. No todo el mundo domina eso de contar"
+	},
+	4: {
+		LevelConfigKey.HINT: "¡Eres la caña! Sigamos con el... con el...\n ¡Vaya!, me he olvidado, ¿cuál seguía ahora?",
+	},
+	5: {
 		LevelConfigKey.HINT: "Veo que estás atento. ¿Y ahora?",
 		LevelConfigKey.N_EXTRA_VALUES: 3
 	},
-	4: {
-		LevelConfigKey.HINT: "No sé si lo sabes pero este juego es para una jam con el tema \"De 0 a 100\"\n¿Tienes alguna sospecha de a qué número tenemos que llegar?",
+	6: {
+		LevelConfigKey.HINT: "No sé si lo sabes pero este juego gira en torno al tema \"De 0 a 100\"\n¿Tienes alguna sospecha de a qué número tenemos que llegar?",
 	},
-	5: {
-		LevelConfigKey.HINT: "Bueno, pero vayamos poco a poco. ¿Qué tal si te dejo a solas y nos vemos en el 10?",
+	7: {
+		LevelConfigKey.HINT: "Imagino que lo sospechas, pero vayamos poco a poco.\n¿Qué tal si te dejo un momentito a solas y nos vemos en el 10?",
 		LevelConfigKey.GAME_OVER_TAUNT: "No puedo estar siempre contigo. Tienes que abandonar el nido."
 	},
 	11: {
@@ -64,31 +71,31 @@ var _level_configs = {
 	22: {
 		LevelConfigKey.HINT: "¡Tienes razón! ¡Era el 21! :-D"
 	},
-	23: {
+	25: {
 		LevelConfigKey.HINT: "Ignora el fondo. Godot me lo cambia a veces.",
 		LevelConfigKey.TRICK: TrickType.BACKGROUND_NUMBER,
 		LevelConfigKey.GAME_OVER_TAUNT: "Ya sabía yo que ese fondo era una mala influencia"
 	},
-	28: {
+	35: {
 		LevelConfigKey.HINT: "¡QUE SE ESCAPA!",
 		LevelConfigKey.TRICK: TrickType.MOVING_BALL,
 		LevelConfigKey.GAME_OVER_TAUNT: "Vaya movida. Jajaja, ¿lo pillas? MOVIda por la bola que se MOVIa.\nVale, ha sido malo, pero al menos yo no he perdido la cuenta, ¿no?"
 	},
-	35: {
+	45: {
 		LevelConfigKey.HINT: "¡Ah! Eso no será la cuenta atrás de una bomba, ¿verdad? ¿VERDAD?",
 		LevelConfigKey.TRICK: TrickType.TIME_BAR,
 		LevelConfigKey.GAME_OVER_TAUNT: "A lo mejor no era una bomba, no."
 	},
-	36: {
+	46: {
 		LevelConfigKey.HINT: "¡Uff! Parece que no lo era"
-	},
-	45: {
-		LevelConfigKey.TRICK: TrickType.NOTIFICATION,
-		LevelConfigKey.GAME_OVER_TAUNT: "Mira que me salio fea la notificación y aún así caíste :-D"
 	},
 	51: {
 		LevelConfigKey.HINT: "¡Mitad del camino! ¡Dale al 50 para continuar!",
 		LevelConfigKey.GAME_OVER_TAUNT: "¿O era el 51?"
+	},
+	55: {
+		LevelConfigKey.TRICK: TrickType.NOTIFICATION,
+		LevelConfigKey.GAME_OVER_TAUNT: "Mira que me salio fea la notificación y aún así caíste :-D"
 	}
 }
 
