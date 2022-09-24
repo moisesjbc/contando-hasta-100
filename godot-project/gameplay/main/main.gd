@@ -22,7 +22,7 @@ func reset_hint():
 		var n_extra_values = current_level_config[$levels_config.N_EXTRA_VALUES]
 		current_hint = "¡DALE CAÑA A ESE %d!" % ((current_level - 1) + randi() % 3)
 
-	$GUI/margin_container/hint_panel.set_hint(current_hint)
+	$GUI/hint_panel.set_hint(current_hint)
 
 
 func reset():

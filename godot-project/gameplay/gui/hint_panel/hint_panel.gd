@@ -1,9 +1,9 @@
-extends Panel
+extends MarginContainer
 
 
 func set_hint(hint):
 	if hint:
 		visible = true
-		$hint_label.text = hint
+		$panel/hint_label.text = hint
 	else:
 		visible = false
