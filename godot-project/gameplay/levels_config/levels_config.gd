@@ -95,6 +95,7 @@ var _level_configs = {
 
 func get_level_config(current_level_index: int):
 	if current_level_index == 0:
+		accumulated_tricks = []
 		current_level_config = {
 			LevelConfigKey.HINT: null,
 			LevelConfigKey.N_EXTRA_VALUES: 0,
