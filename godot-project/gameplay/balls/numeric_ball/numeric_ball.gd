@@ -21,7 +21,7 @@ func _on_numeric_ball_input_event(_viewport, event, _shape_idx):
 			$animation_player.play("wrong_selection")
 
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	emit_signal("numeric_ball_selected", self)
 
 

@@ -15,7 +15,8 @@ func set_active(active: bool):
 	if active:
 		random_ball = balls_manager.get_random_ball()
 		random_ball.visible = false
-		$time_bar.connect("timeout", self, "_make_random_ball_visible")
+		if $time_bar.connect("timeout", self, "_make_random_ball_visible") != OK:
+			print("ERROR connecting timeout")
 		$time_bar.set_time(5)
 
 

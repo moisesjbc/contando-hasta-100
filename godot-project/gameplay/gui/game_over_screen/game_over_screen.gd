@@ -3,10 +3,10 @@ extends CenterContainer
 var main
 
 
-func display(main, selected_value, expected_value, taunt):
+func display(new_main, selected_value, expected_value, taunt):
 	get_tree().paused = true
 	visible = true
-	self.main = main
+	main = new_main
 		
 	if selected_value == expected_value:
 		$panel/margin_container/vbox_container/title.text = "¡VICTORIA!"

@@ -35,7 +35,7 @@ func _ready():
 	reset()
 
 
-func _instantiate_numeric_ball(value: int, right_value: int):
+func _instantiate_numeric_ball(value: int):
 	var numeric_ball = numeric_ball_scene.instance()
 	numeric_ball.global_position = _get_random_respawn_position()
 	$balls.add_child(numeric_ball)
@@ -51,12 +51,12 @@ func reset():
 		ball.queue_free()
 
 	for i in range(right_value - n_extra_values, right_value):
-		_instantiate_numeric_ball(i, right_value)
+		_instantiate_numeric_ball(i)
 		
-	right_ball = _instantiate_numeric_ball(right_value, right_value)
+	right_ball = _instantiate_numeric_ball(right_value)
 	
 	for i in range(right_value + 1, right_value + n_extra_values):
-		_instantiate_numeric_ball(i, right_value)
+		_instantiate_numeric_ball(i)
 		
 	if trick_type == TrickType.MOVING_BALL:
 		get_random_ball().move()

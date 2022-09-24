@@ -46,9 +46,9 @@ func reset():
 	)
 
 
-func set_level(current_level):
-	self.current_level_config = $levels_config.get_level_config(current_level)
-	self.current_level = current_level
+func set_level(new_current_level):
+	self.current_level_config = $levels_config.get_level_config(new_current_level)
+	self.current_level = new_current_level
 	reset()
 
 
