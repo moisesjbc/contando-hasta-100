@@ -66,7 +66,7 @@ func reset():
 
 func get_random_ball():
 	randomize()
-	if randi() % 50 <= 50:
+	if randi() % 100 <= 50:
 		return right_ball
 	else:
 		var ball_index = randi() % $balls.get_child_count()
