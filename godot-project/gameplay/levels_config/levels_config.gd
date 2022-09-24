@@ -96,6 +96,10 @@ var _level_configs = {
 	55: {
 		LevelConfigKey.TRICK: TrickType.NOTIFICATION,
 		LevelConfigKey.GAME_OVER_TAUNT: "Mira que me salio fea la notificación y aún así caíste :-D"
+	},
+	65: {
+		LevelConfigKey.TRICK: TrickType.POPUP,
+		LevelConfigKey.GAME_OVER_TAUNT: "Así que los popups son tu debilidad, ¿eh?"
 	}
 }
 
