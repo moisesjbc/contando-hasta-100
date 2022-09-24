@@ -8,7 +8,7 @@ const TrickType = preload("res://globals/trick_type.gd").TrickType
 
 
 func _ready():
-	#set_level(current_level)
+	# set_level(current_level)
 	# TODO: Remove development trick
 	for i in range(0, 12):
 		current_level = i

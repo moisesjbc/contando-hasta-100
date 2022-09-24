@@ -54,15 +54,14 @@ var _level_configs = {
 }
 
 
-func _ready():
-	current_level_config = {
-		HINT_KEY: null,
-		N_EXTRA_VALUES: 0,
-		TRICK: null
-	}
-
-
 func get_level_config(current_level_index: int):
+	if current_level_index == 0:
+		current_level_config = {
+			HINT_KEY: null,
+			N_EXTRA_VALUES: 0,
+			TRICK: null
+		}
+	
 	current_level_config[HINT_KEY] = null
 	current_level_config[TRICK] = null
 
