@@ -4,5 +4,6 @@ extends Node
 enum TrickType {
 	HINT_TEXT,
 	BACKGROUND_NUMBER,
-	MOVING_BALL
+	MOVING_BALL,
+	TIME_BAR
 }

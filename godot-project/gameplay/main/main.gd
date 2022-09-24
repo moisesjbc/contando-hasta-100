@@ -10,10 +10,10 @@ var LevelConfigKey = preload("res://gameplay/levels_config/levels_config.gd").Le
 func _ready():
 	# set_level(current_level)
 	# TODO: Remove development trick
-	for i in range(0, 24):
+	for i in range(0, 32):
 		current_level = i
 		$levels_config.get_level_config(i)
-	set_level(24)
+	set_level(32)
 	
 	
 func reset_hint():
@@ -30,6 +30,7 @@ func reset_background():
 	
 	if current_level_config[LevelConfigKey.TRICK] == TrickType.BACKGROUND_NUMBER:
 		$taunt_background.repeat_number(get_random_number())
+
 
 func reset():
 	reset_background()
@@ -51,20 +52,20 @@ func next_level():
 	set_level(current_level + 1)
 
 
-func _on_balls_manager_number_selected(current_value):
-	if current_level == current_value:
+func _on_balls_manager_number_selected(selected_value):
+	if current_level == selected_value:
 		if not is_victory():
 			next_level()
 		else:
-			$GUI/game_over_screen.display(self, current_value, current_level, null)
+			$GUI/game_over_screen.display(self, selected_value, current_level, null)
 	else:
-		$GUI/game_over_screen.display(self, current_value, current_level, current_level_config[LevelConfigKey.GAME_OVER_TAUNT])
+		$GUI/game_over_screen.display(self, selected_value, current_level, current_level_config[LevelConfigKey.GAME_OVER_TAUNT])
 
 
 func is_victory():
 	return current_level >= 35
-	
-	
+
+
 func get_random_number():
 	randomize()
 	return current_level - current_level_config[LevelConfigKey.N_EXTRA_VALUES] + randi() % (current_level_config[LevelConfigKey.N_EXTRA_VALUES] * 2 + 1)

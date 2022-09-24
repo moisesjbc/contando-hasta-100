@@ -73,6 +73,14 @@ var _level_configs = {
 		LevelConfigKey.HINT: "¡QUE SE ESCAPA!",
 		LevelConfigKey.TRICK: TrickType.MOVING_BALL,
 		LevelConfigKey.GAME_OVER_TAUNT: "Vaya movida. Jajaja, ¿lo pillas? MOVIda por la bola que se MOVIa.\nVale, ha sido malo, pero al menos yo no he perdido la cuenta, ¿no?"
+	},
+	35: {
+		LevelConfigKey.HINT: "¡Ah! Eso no será la cuenta atrás de una bomba, ¿verdad? ¿VERDAD?",
+		LevelConfigKey.TRICK: TrickType.TIME_BAR,
+		LevelConfigKey.GAME_OVER_TAUNT: "A lo mejor no era una bomba, no."
+	},
+	36: {
+		LevelConfigKey.HINT: "¡Uff! Parece que no lo era"
 	}
 }
 

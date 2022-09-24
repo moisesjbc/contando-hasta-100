@@ -8,7 +8,7 @@ func display(main, selected_value, expected_value, taunt):
 	visible = true
 	self.main = main
 		
-	if main.is_victory():
+	if selected_value == expected_value:
 		$panel/margin_container/vbox_container/title.text = "¡VICTORIA!"
 		$panel/margin_container/vbox_container/summary.text = "¡Gracias por jugar!"
 	else:

@@ -1,5 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://gameplay/gui/time_bar/time_bar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://gameplay/balls_manager/tme_bar_trick.gd" type="Script" id=2]
 [ext_resource path="res://gameplay/balls_manager/balls_manager.gd" type="Script" id=3]
 
 [node name="balls_manager" type="Node"]
@@ -14,3 +16,11 @@ position = Vector2( 150, 200 )
 
 [node name="bottom_right_coner" type="Position2D" parent="respawn_region"]
 position = Vector2( 1170, 599 )
+
+[node name="time_bar_trick" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 2 )
+
+[node name="time_bar" parent="time_bar_trick" instance=ExtResource( 1 )]

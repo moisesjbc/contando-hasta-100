@@ -7,6 +7,7 @@ var n_extra_values = 0
 var trick_type = null
 var numeric_ball_scene = preload("res://gameplay/balls/numeric_ball/numeric_ball.tscn")
 var TrickType = preload("res://globals/trick_type.gd").TrickType
+var right_ball = null
 
 func set_level(new_right_value: int, new_n_extra_values: int, new_trick_type):
 	right_value = new_right_value
@@ -40,6 +41,7 @@ func _instantiate_numeric_ball(value: int, right_value: int):
 	$balls.add_child(numeric_ball)
 	numeric_ball.set_value(value, right_value)
 	numeric_ball.connect("numeric_ball_selected", self, "_on_numeric_ball_selected")
+	return numeric_ball
 
 func reset():
 	free_respawn_positions = [] + all_respawn_positions
@@ -51,15 +53,24 @@ func reset():
 	for i in range(right_value - n_extra_values, right_value):
 		_instantiate_numeric_ball(i, right_value)
 		
-	_instantiate_numeric_ball(right_value, right_value)
+	right_ball = _instantiate_numeric_ball(right_value, right_value)
 	
 	for i in range(right_value + 1, right_value + n_extra_values):
 		_instantiate_numeric_ball(i, right_value)
 		
 	if trick_type == TrickType.MOVING_BALL:
-		randomize()
+		get_random_ball().move()
+	
+	$time_bar_trick.set_active(trick_type == TrickType.TIME_BAR)
+
+
+func get_random_ball():
+	randomize()
+	if randi() % 50 <= 50:
+		return right_ball
+	else:
 		var ball_index = randi() % $balls.get_child_count()
-		$balls.get_child(ball_index).move()
+		return $balls.get_child(ball_index)
 
 
 func _get_random_respawn_position():
