@@ -66,7 +66,8 @@ var _level_configs = {
 	},
 	23: {
 		LevelConfigKey.HINT: "Ignora el fondo. Godot me lo cambia a veces.",
-		LevelConfigKey.TRICK: TrickType.BACKGROUND_NUMBER
+		LevelConfigKey.TRICK: TrickType.BACKGROUND_NUMBER,
+		LevelConfigKey.GAME_OVER_TAUNT: "Ya sabía yo que ese fondo no era trigo limpio"
 	}
 }
 
