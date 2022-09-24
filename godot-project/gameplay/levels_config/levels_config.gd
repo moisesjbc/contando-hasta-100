@@ -4,7 +4,8 @@ extends Node
 enum LevelConfigKey {
 	HINT,
 	N_EXTRA_VALUES,
-	TRICK
+	TRICK,
+	GAME_OVER_TAUNT
 }
 
 
@@ -26,7 +27,7 @@ var _level_configs = {
 	},
 	2: {
 		LevelConfigKey.HINT: "¡Perfecto!¿Podrías clicar ahora en...?\n No me acuerdo, ¿cuál iba ahora?",
-		LevelConfigKey.N_EXTRA_VALUES: 2
+		LevelConfigKey.N_EXTRA_VALUES: 2,
 	},
 	3: {
 		LevelConfigKey.HINT: "Veo que estás atento. ¿Y ahora?",
@@ -37,15 +38,18 @@ var _level_configs = {
 	},
 	5: {
 		LevelConfigKey.HINT: "Bueno, pero vayamos poco a poco. ¿Qué tal si te dejo a solas y nos vemos en el 10?",
+		LevelConfigKey.GAME_OVER_TAUNT: "No puedo estar siempre contigo. Tienes que abandonar el nido."
 	},
 	11: {
-		LevelConfigKey.HINT: "¡Hola de nuevo! ¿Cómo lo llevas?\nEspero que bien porque tengo malas noticias"
+		LevelConfigKey.HINT: "¡Hola de nuevo! ¿Cómo lo llevas?\nEspero que bien porque tengo malas noticias",
+		LevelConfigKey.GAME_OVER_TAUNT: "¡Pero al menos espera a las malas noticias!"
 	},
 	12: {
-		LevelConfigKey.HINT: "A partir de ahora va a haber distraciones por el camino, ¡pero yo creo en ti!\n¡Pulsa ese 13 y sigamos!"
+		LevelConfigKey.HINT: "A partir de ahora va a haber distraciones por el camino, así que no te fies de nada ni de NADIE\n¡Bueno, pulsa ese 13 y sigamos!",
+		LevelConfigKey.GAME_OVER_TAUNT: "¡Pero bueno, si te acabo de decir que no te fies de NADIE! ;-)"
 	},
 	13: {
-		LevelConfigKey.HINT: "¡Jajaja! Veo que no es difícil distraerte ;-)"
+		LevelConfigKey.HINT: "¡Jajaja! Veo que no es fácil distraerte ;-)"
 	},
 	14: {
 		LevelConfigKey.HINT: "Pero no nos confiemos, ¿ok?\n¡Bueno, pulsa ese 14 y nos vemos en el 20!"
@@ -66,12 +70,12 @@ func get_level_config(current_level_index: int):
 	
 	current_level_config[LevelConfigKey.HINT] = null
 	current_level_config[LevelConfigKey.TRICK] = null
+	current_level_config[LevelConfigKey.GAME_OVER_TAUNT] = null
 
 	if current_level_index in _level_configs:
-		if LevelConfigKey.HINT in _level_configs[current_level_index]:
-			current_level_config[LevelConfigKey.HINT] = _level_configs[current_level_index][LevelConfigKey.HINT]
-		if LevelConfigKey.N_EXTRA_VALUES in _level_configs[current_level_index]:
-			current_level_config[LevelConfigKey.N_EXTRA_VALUES] = _level_configs[current_level_index][LevelConfigKey.N_EXTRA_VALUES]
+		for level_config_key in [LevelConfigKey.HINT, LevelConfigKey.N_EXTRA_VALUES, LevelConfigKey.GAME_OVER_TAUNT]:
+			if level_config_key in _level_configs[current_level_index]:
+				current_level_config[level_config_key] = _level_configs[current_level_index][level_config_key]
 
 		if LevelConfigKey.TRICK in _level_configs[current_level_index]:
 			# The current level adds a new type of trick. Force it for this level and then

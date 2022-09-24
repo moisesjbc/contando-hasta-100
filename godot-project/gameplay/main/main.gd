@@ -48,9 +48,9 @@ func _on_balls_manager_number_selected(current_value):
 		if not is_victory():
 			next_level()
 		else:
-			$GUI/game_over_screen.display(self, current_value, current_level)
+			$GUI/game_over_screen.display(self, current_value, current_level, null)
 	else:
-		$GUI/game_over_screen.display(self, current_value, current_level)
+		$GUI/game_over_screen.display(self, current_value, current_level, current_level_config[LevelConfigKey.GAME_OVER_TAUNT])
 
 
 func is_victory():
