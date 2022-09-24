@@ -43,7 +43,7 @@ custom_fonts/font = SubResource( 1 )
 text = "¡Game over!"
 align = 1
 
-[node name="description" type="Label" parent="margin_container/vbox_container"]
+[node name="body" type="Label" parent="margin_container/vbox_container"]
 margin_top = 81.0
 margin_right = 340.0
 margin_bottom = 107.0
@@ -51,6 +51,7 @@ size_flags_vertical = 6
 custom_fonts/font = SubResource( 2 )
 text = "¡Has llegado al 0!"
 align = 1
+autowrap = true
 
 [node name="restart_button" parent="margin_container/vbox_container" instance=ExtResource( 3 )]
 pause_mode = 2
