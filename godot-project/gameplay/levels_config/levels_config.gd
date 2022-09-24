@@ -81,6 +81,14 @@ var _level_configs = {
 	},
 	36: {
 		LevelConfigKey.HINT: "¡Uff! Parece que no lo era"
+	},
+	45: {
+		LevelConfigKey.TRICK: TrickType.NOTIFICATION,
+		LevelConfigKey.GAME_OVER_TAUNT: "Mira que me salio fea la notificación y aún así caíste :-D"
+	},
+	51: {
+		LevelConfigKey.HINT: "¡Mitad del camino! ¡Dale al 50 para continuar!",
+		LevelConfigKey.GAME_OVER_TAUNT: "¿O era el 51?"
 	}
 }
 
