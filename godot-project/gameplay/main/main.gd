@@ -5,7 +5,7 @@ var current_level: int = 0
 var current_level_config = {}
 
 const TrickType = preload("res://globals/trick_type.gd").TrickType
-
+var LevelConfigKey = preload("res://gameplay/levels_config/levels_config.gd").LevelConfigKey
 
 func _ready():
 	# set_level(current_level)
@@ -17,9 +17,9 @@ func _ready():
 	
 	
 func reset_hint():
-	var current_hint = current_level_config[$levels_config.HINT_KEY]
-	if not current_hint and current_level_config[$levels_config.TRICK] == TrickType.HINT_TEXT:
-		var n_extra_values = current_level_config[$levels_config.N_EXTRA_VALUES]
+	var current_hint = current_level_config[LevelConfigKey.HINT]
+	if not current_hint and current_level_config[LevelConfigKey.TRICK] == TrickType.HINT_TEXT:
+		var n_extra_values = current_level_config[LevelConfigKey.N_EXTRA_VALUES]
 		current_hint = "¡DALE CAÑA A ESE %d!" % ((current_level - 1) + randi() % 3)
 
 	$GUI/hint_panel.set_hint(current_hint)
@@ -29,7 +29,7 @@ func reset():
 	reset_hint()
 	$balls_manager.set_level(
 		current_level,
-		current_level_config[$levels_config.N_EXTRA_VALUES]
+		current_level_config[LevelConfigKey.N_EXTRA_VALUES]
 	)
 
 
