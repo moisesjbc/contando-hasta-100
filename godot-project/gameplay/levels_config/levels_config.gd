@@ -56,6 +56,17 @@ var _level_configs = {
 	},
 	17: {
 		LevelConfigKey.TRICK: TrickType.HINT_TEXT
+	},
+	21: {
+		LevelConfigKey.HINT: "Un quinto del camino, ¿eh?. ¡No está nada mal!\nA POR EL 20",
+		LevelConfigKey.GAME_OVER_TAUNT: "Ah, ¿el 20 ya lo habías pulsado? Culpa mía ^^U"
+	},
+	22: {
+		LevelConfigKey.HINT: "¡Tienes razón! ¡Era el 21! :-D"
+	},
+	23: {
+		LevelConfigKey.HINT: "Ignora el fondo. Godot me lo cambia a veces.",
+		LevelConfigKey.TRICK: TrickType.BACKGROUND_NUMBER
 	}
 }
 

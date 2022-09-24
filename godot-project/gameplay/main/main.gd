@@ -10,22 +10,29 @@ var LevelConfigKey = preload("res://gameplay/levels_config/levels_config.gd").Le
 func _ready():
 	# set_level(current_level)
 	# TODO: Remove development trick
-	for i in range(0, 12):
+	for i in range(0, 20):
 		current_level = i
 		$levels_config.get_level_config(i)
-	set_level(12)
+	set_level(20)
 	
 	
 func reset_hint():
 	var current_hint = current_level_config[LevelConfigKey.HINT]
 	if not current_hint and current_level_config[LevelConfigKey.TRICK] == TrickType.HINT_TEXT:
 		var n_extra_values = current_level_config[LevelConfigKey.N_EXTRA_VALUES]
-		current_hint = "¡DALE CAÑA A ESE %d!" % ((current_level - 1) + randi() % 3)
+		current_hint = "¡DALE CAÑA A ESE %d!" % get_random_number()
 
 	$GUI/hint_panel.set_hint(current_hint)
 
 
+func reset_background():
+	$taunt_background.clear()
+	
+	if current_level_config[LevelConfigKey.TRICK] == TrickType.BACKGROUND_NUMBER:
+		$taunt_background.repeat_number(get_random_number())
+
 func reset():
+	reset_background()
 	reset_hint()
 	$balls_manager.set_level(
 		current_level,
@@ -55,3 +62,8 @@ func _on_balls_manager_number_selected(current_value):
 
 func is_victory():
 	return current_level >= 25
+	
+	
+func get_random_number():
+	randomize()
+	return current_level - current_level_config[LevelConfigKey.N_EXTRA_VALUES] + randi() % (current_level_config[LevelConfigKey.N_EXTRA_VALUES] * 2 + 1)
