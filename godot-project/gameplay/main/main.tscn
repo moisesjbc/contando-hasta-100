@@ -22,11 +22,13 @@ mouse_filter = 2
 
 [node name="margin_container" type="MarginContainer" parent="GUI"]
 anchor_right = 1.0
-custom_constants/margin_right = 200
+custom_constants/margin_right = 50
 custom_constants/margin_top = 10
-custom_constants/margin_left = 200
+custom_constants/margin_left = 50
 
 [node name="hint_panel" parent="GUI/margin_container" instance=ExtResource( 2 )]
+margin_left = 50.0
+margin_right = 1230.0
 margin_bottom = 85.0
 
 [node name="levels_config" parent="." instance=ExtResource( 5 )]

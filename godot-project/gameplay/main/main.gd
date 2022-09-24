@@ -11,7 +11,10 @@ func _ready():
 
 func reset():
 	$GUI/margin_container/hint_panel.set_hint(current_level_config[$levels_config.HINT_KEY])
-	$balls_manager.set_level(current_level)
+	$balls_manager.set_level(
+		current_level,
+		current_level_config[$levels_config.N_EXTRA_VALUES]
+	)
 
 
 func set_level(current_level):

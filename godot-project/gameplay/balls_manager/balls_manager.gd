@@ -3,10 +3,12 @@ extends Node
 signal number_selected
 
 var right_value = 0
+var n_extra_values = 0
 var numeric_ball_scene = preload("res://gameplay/balls/numeric_ball/numeric_ball.tscn")
 
-func set_level(new_right_value: int):
+func set_level(new_right_value: int, new_n_extra_values: int):
 	right_value = new_right_value
+	n_extra_values = new_n_extra_values
 	reset()
 	
 var all_respawn_positions = []
@@ -29,6 +31,13 @@ func _ready():
 	reset()
 
 
+func _instantiate_numeric_ball(value: int, right_value: int):
+	var numeric_ball = numeric_ball_scene.instance()
+	numeric_ball.global_position = _get_random_respawn_position()
+	$balls.add_child(numeric_ball)
+	numeric_ball.set_value(value, right_value)
+	numeric_ball.connect("numeric_ball_selected", self, "_on_numeric_ball_selected")
+
 func reset():
 	free_respawn_positions = [] + all_respawn_positions
 	
@@ -36,12 +45,13 @@ func reset():
 		$balls.remove_child(ball)
 		ball.queue_free()
 
-	for i in range(right_value - 3, right_value + 3):
-		var numeric_ball = numeric_ball_scene.instance()
-		numeric_ball.global_position = _get_random_respawn_position()
-		$balls.add_child(numeric_ball)
-		numeric_ball.set_value(i, right_value)
-		numeric_ball.connect("numeric_ball_selected", self, "_on_numeric_ball_selected")
+	for i in range(right_value - n_extra_values, right_value):
+		_instantiate_numeric_ball(i, right_value)
+		
+	_instantiate_numeric_ball(right_value, right_value)
+	
+	for i in range(right_value + 1, right_value + n_extra_values):
+		_instantiate_numeric_ball(i, right_value)
 
 
 func _get_random_respawn_position():
