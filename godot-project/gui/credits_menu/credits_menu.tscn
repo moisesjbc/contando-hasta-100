@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://gui/panel/panel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://gui/credits_menu/credits_menu.gd" type="Script" id=3]
+[ext_resource path="res://gui/button/button.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[node name="credits_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="center_container" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="panel" parent="center_container" instance=ExtResource( 1 )]
+margin_left = 40.0
+margin_top = 10.0
+margin_right = 1240.0
+margin_bottom = 710.0
+rect_min_size = Vector2( 1200, 700 )
+
+[node name="margin_container" type="MarginContainer" parent="center_container/panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+
+[node name="vbox_container" type="VBoxContainer" parent="center_container/panel/margin_container"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1150.0
+margin_bottom = 650.0
+custom_constants/separation = 20
+
+[node name="title" type="Label" parent="center_container/panel/margin_container/vbox_container"]
+margin_right = 1100.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 1 )
+text = "CRÉDITOS"
+align = 1
+valign = 1
+
+[node name="body" type="ScrollContainer" parent="center_container/panel/margin_container/vbox_container"]
+margin_top = 88.0
+margin_right = 1100.0
+margin_bottom = 530.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="text" type="RichTextLabel" parent="center_container/panel/margin_container/vbox_container/body"]
+margin_right = 1100.0
+margin_bottom = 442.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center][color=#ECA72C]Idea, diseño y programación[/color]
+[color=#E4FDE1]Moisés J. Bonilla Caraballo  ([url=\"https://www.moisesjose.com/\"]web[/url])[/color]
+
+[color=#ECA72C]Arte y sonido[/color]
+[color=#E4FDE1]Moisés J. Bonilla Caraballo  ([url=\"https://moisesjose.com/\"]web[/url])[/color]
+
+[color=#ECA72C]Música[/color]
+[color=#E4FDE1]Alejandro Sánchez Medina ([url=\"https://github.com/alejandrosame\"]web[/url])[/color]
+[/center]
+[center][color=#ECA72C]Herramientas usadas[/color]
+[color=#E4FDE1]Godot Engine ([url=\"https://godotengine.org/\"]web[/url])[/color]
+[color=#E4FDE1]Coolors ([url=\"https://coolors.co/\"]web[/url])[/color]
+
+[center][color=#ECA72C]Fuentes[/color]
+[color=#E4FDE1]Ubuntu font ([url=\"https://design.ubuntu.com/font/\"]web[/url])[/color]"
+text = "Idea, diseño y programación
+Moisés J. Bonilla Caraballo  (web)
+
+Arte y sonido
+Moisés J. Bonilla Caraballo  (web)
+
+Música
+Alejandro Sánchez Medina (web)
+
+Herramientas usadas
+Godot Engine (web)
+Coolors (web)
+
+Fuentes
+Ubuntu font (web)"
+
+[node name="return_to_main_menu_button" parent="center_container/panel/margin_container/vbox_container" instance=ExtResource( 4 )]
+margin_top = 550.0
+margin_right = 1100.0
+margin_bottom = 600.0
+text = "Volver al menú principal"
+
+[connection signal="meta_clicked" from="center_container/panel/margin_container/vbox_container/body/text" to="." method="_on_text_meta_clicked"]
+[connection signal="pressed" from="center_container/panel/margin_container/vbox_container/return_to_main_menu_button" to="." method="_on_return_to_main_menu_button_pressed"]
