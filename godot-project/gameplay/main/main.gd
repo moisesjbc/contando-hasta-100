@@ -78,7 +78,7 @@ func _on_balls_manager_number_selected(selected_value):
 
 
 func is_victory():
-	return current_level >= 70
+	return current_level >= 100
 
 
 func get_random_number():
