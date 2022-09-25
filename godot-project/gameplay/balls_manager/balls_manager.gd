@@ -67,9 +67,9 @@ func activate_trick():
 		var random_ball = get_random_ball()
 		for ball in $balls.get_children():
 			if ball != random_ball:
-				ball.scale = Vector2(0.75, 0.75)
+				ball.attenuate()
 			else:
-				ball.scale = Vector2(1.50, 1.50)
+				ball.highlight()
 		
 	$time_bar_trick.set_active(trick_type == TrickType.TIME_BAR)
 

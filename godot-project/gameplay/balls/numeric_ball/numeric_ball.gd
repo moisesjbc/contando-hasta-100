@@ -27,3 +27,12 @@ func _on_animation_player_animation_finished(_anim_name):
 
 func move():
 	$ball_movement.move()
+
+
+func attenuate():
+	scale = Vector2(0.75, 0.75)
+	$sprite.modulate = Color.orange
+
+func highlight():
+	scale = Vector2(1.50, 1.50)
+	$sprite.modulate = Color.green
