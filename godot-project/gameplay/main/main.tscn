@@ -12,7 +12,6 @@
 
 [node name="main" type="Node2D"]
 script = ExtResource( 3 )
-first_level = 85
 
 [node name="taunt_background" parent="." instance=ExtResource( 6 )]
 
