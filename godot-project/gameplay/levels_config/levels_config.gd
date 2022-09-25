@@ -100,6 +100,10 @@ var _level_configs = {
 	65: {
 		LevelConfigKey.TRICK: TrickType.POPUP,
 		LevelConfigKey.GAME_OVER_TAUNT: "Así que los popups son tu debilidad, ¿eh?"
+	},
+	75: {
+		LevelConfigKey.TRICK: TrickType.RESIZE_BALL,
+		LevelConfigKey.GAME_OVER_TAUNT: "Parece que el tamaño importa después de todo"
 	}
 }
 

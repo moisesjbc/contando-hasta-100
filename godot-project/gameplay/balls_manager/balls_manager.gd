@@ -58,11 +58,20 @@ func reset():
 	for i in range(right_value + 1, right_value + n_extra_values):
 		_instantiate_numeric_ball(i)
 		
+	activate_trick()
+
+func activate_trick():
 	if trick_type == TrickType.MOVING_BALL:
 		get_random_ball().move()
-	
+	elif trick_type == TrickType.RESIZE_BALL:
+		var random_ball = get_random_ball()
+		for ball in $balls.get_children():
+			if ball != random_ball:
+				ball.scale = Vector2(0.75, 0.75)
+			else:
+				ball.scale = Vector2(1.50, 1.50)
+		
 	$time_bar_trick.set_active(trick_type == TrickType.TIME_BAR)
-
 
 func get_random_ball():
 	randomize()

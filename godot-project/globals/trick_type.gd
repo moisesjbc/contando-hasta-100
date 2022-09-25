@@ -7,5 +7,6 @@ enum TrickType {
 	MOVING_BALL,
 	TIME_BAR,
 	NOTIFICATION,
-	POPUP
+	POPUP,
+	RESIZE_BALL
 }
