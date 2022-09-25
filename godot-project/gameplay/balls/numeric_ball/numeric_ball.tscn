@@ -197,12 +197,12 @@ script = ExtResource( 5 )
 
 [node name="right_ball_selected" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "SFX"
 
 [node name="wrong_ball_selected" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -15.0
+volume_db = -20.0
 bus = "SFX"
 
 [node name="border_position" type="Position2D" parent="."]
