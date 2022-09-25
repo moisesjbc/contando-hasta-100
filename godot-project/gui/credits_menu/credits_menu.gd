@@ -4,7 +4,6 @@ extends Control
 
 
 func _on_text_meta_clicked(meta):
-	print("META ", meta)
 	var error_code = OS.shell_open(meta)
 	if error_code != 0:
 		print('ERROR opening ' + meta + ' - error code: ' + str(error_code))

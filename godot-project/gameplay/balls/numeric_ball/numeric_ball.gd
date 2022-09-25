@@ -15,7 +15,6 @@ func set_value(new_value: int, new_expected_value: int):
 
 func _unhandled_input(event):
 	if (event is InputEventMouseButton && event.pressed and Vector2.ZERO.distance_to(to_local(event.position)) <= Vector2.ZERO.distance_to($border_position.position)):
-		print("PRESSED ", self)
 		if value == expected_value:
 			$animation_player.play("right_selection")
 			$right_ball_selected.play()
