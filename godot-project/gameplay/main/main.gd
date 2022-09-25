@@ -15,7 +15,7 @@ func _ready():
 		current_level = i
 		$levels_config.get_level_config(i)
 	set_level(first_level)
-	
+
 	
 func reset_hint():
 	var current_hint = current_level_config[LevelConfigKey.HINT]

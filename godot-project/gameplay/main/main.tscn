@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://gameplay/balls_manager/balls_manager.tscn" type="PackedScene" id=1]
 [ext_resource path="res://gameplay/gui/hint_panel/hint_panel.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://gameplay/gui/taunt_background/taunt_background.tscn" type="PackedScene" id=6]
 [ext_resource path="res://gameplay/notification/notification.tscn" type="PackedScene" id=7]
 [ext_resource path="res://gameplay/gui/trick_popup/trick_popup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://gameplay/gui/pause_menu.tscn" type="PackedScene" id=9]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 3 )
@@ -26,6 +27,8 @@ visible = false
 
 [node name="popup" parent="GUI" instance=ExtResource( 8 )]
 visible = false
+
+[node name="pause_menu" parent="GUI" instance=ExtResource( 9 )]
 
 [node name="levels_config" parent="." instance=ExtResource( 5 )]
 
