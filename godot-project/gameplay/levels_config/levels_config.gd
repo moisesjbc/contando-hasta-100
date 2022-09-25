@@ -5,7 +5,8 @@ enum LevelConfigKey {
 	HINT,
 	N_EXTRA_VALUES,
 	TRICK,
-	GAME_OVER_TAUNT
+	GAME_OVER_TAUNT,
+	GAME_OVER_TAUNT_VALUE
 }
 
 
@@ -53,7 +54,8 @@ var _level_configs = {
 	},
 	12: {
 		LevelConfigKey.HINT: "A partir de ahora va a haber distraciones por el camino, así que no te fies de nada ni de NADIE\n¡Bueno, pulsa ese 13 y sigamos!",
-		LevelConfigKey.GAME_OVER_TAUNT: "¡Pero bueno, si te acabo de decir que no te fies de NADIE! ;-)"
+		LevelConfigKey.GAME_OVER_TAUNT: "¡Pero bueno, si te acabo de decir que no te fies de NADIE! ;-)",
+		LevelConfigKey.GAME_OVER_TAUNT_VALUE: 13
 	},
 	13: {
 		LevelConfigKey.HINT: "¡Jajaja! Veo que no es fácil distraerte ;-)"
@@ -66,7 +68,8 @@ var _level_configs = {
 	},
 	21: {
 		LevelConfigKey.HINT: "Un quinto del camino, ¿eh?. ¡No está nada mal!\nA POR EL 20",
-		LevelConfigKey.GAME_OVER_TAUNT: "Ah, ¿el 20 ya lo habías pulsado? Culpa mía ^^U"
+		LevelConfigKey.GAME_OVER_TAUNT: "Ah, ¿el 20 ya lo habías pulsado? Culpa mía ^^U",
+		LevelConfigKey.GAME_OVER_TAUNT_VALUE: 20
 	},
 	22: {
 		LevelConfigKey.HINT: "¡Tienes razón! ¡Era el 21! :-D"
@@ -91,7 +94,8 @@ var _level_configs = {
 	},
 	51: {
 		LevelConfigKey.HINT: "¡Mitad del camino! ¡Dale al 50 para continuar!",
-		LevelConfigKey.GAME_OVER_TAUNT: "¿O era el 51?"
+		LevelConfigKey.GAME_OVER_TAUNT: "¿O era el 51?",
+		LevelConfigKey.GAME_OVER_TAUNT_VALUE: 50
 	},
 	55: {
 		LevelConfigKey.TRICK: TrickType.NOTIFICATION,
@@ -124,9 +128,10 @@ func get_level_config(current_level_index: int):
 	current_level_config[LevelConfigKey.HINT] = null
 	current_level_config[LevelConfigKey.TRICK] = null
 	current_level_config[LevelConfigKey.GAME_OVER_TAUNT] = null
+	current_level_config[LevelConfigKey.GAME_OVER_TAUNT_VALUE] = null
 
 	if current_level_index in _level_configs:
-		for level_config_key in [LevelConfigKey.HINT, LevelConfigKey.N_EXTRA_VALUES, LevelConfigKey.GAME_OVER_TAUNT]:
+		for level_config_key in [LevelConfigKey.HINT, LevelConfigKey.N_EXTRA_VALUES, LevelConfigKey.GAME_OVER_TAUNT, LevelConfigKey.GAME_OVER_TAUNT_VALUE]:
 			if level_config_key in _level_configs[current_level_index]:
 				current_level_config[level_config_key] = _level_configs[current_level_index][level_config_key]
 
