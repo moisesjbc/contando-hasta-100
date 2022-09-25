@@ -70,6 +70,9 @@ func activate_trick():
 				ball.attenuate()
 			else:
 				ball.highlight()
+	elif trick_type == TrickType.BLINKING_BALLS:
+		for ball in $balls.get_children():
+			ball.blink()
 		
 	$time_bar_trick.set_active(trick_type == TrickType.TIME_BAR)
 

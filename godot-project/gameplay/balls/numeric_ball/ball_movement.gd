@@ -8,7 +8,7 @@ var speed: int = 100
 func _ready():
 	ball = get_parent()
 
-func move():
+func activate():
 	moving = true
 
 	if ball.global_position.x > 500:

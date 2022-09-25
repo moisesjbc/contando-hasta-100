@@ -19,15 +19,14 @@ func _on_numeric_ball_input_event(_viewport, event, _shape_idx):
 			$animation_player.play("right_selection")
 		else:
 			$animation_player.play("wrong_selection")
-
-
-func _on_animation_player_animation_finished(_anim_name):
-	emit_signal("numeric_ball_selected", self)
+		$selection_timeout.start(1.0)
 
 
 func move():
-	$ball_movement.move()
+	$ball_movement.activate()
 
+func blink():
+	$ball_blinking.activate(self, $animation_player)
 
 func attenuate():
 	scale = Vector2(0.75, 0.75)
@@ -36,3 +35,7 @@ func attenuate():
 func highlight():
 	scale = Vector2(1.50, 1.50)
 	$sprite.modulate = Color.green
+
+
+func _on_selection_timeout_timeout():
+	emit_signal("numeric_ball_selected", self)

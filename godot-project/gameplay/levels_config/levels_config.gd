@@ -104,6 +104,10 @@ var _level_configs = {
 	75: {
 		LevelConfigKey.TRICK: TrickType.HIGHLIGHT_BALL,
 		LevelConfigKey.GAME_OVER_TAUNT: "Parece que el tamaño importa después de todo"
+	},
+	85: {
+		LevelConfigKey.TRICK: TrickType.BLINKING_BALLS,
+		LevelConfigKey.GAME_OVER_TAUNT: "¡Si parapadeas te lo pierdes! :-D"
 	}
 }
 
