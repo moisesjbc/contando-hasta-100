@@ -66,36 +66,28 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center][color=#ECA72C]Idea, diseño y programación[/color]
+bbcode_text = "[center][color=#ECA72C]Idea, diseño, programación y arte[/color]
 [color=#E4FDE1]Moisés J. Bonilla Caraballo  ([url=\"https://www.moisesjose.com/\"]web[/url])[/color]
 
-[color=#ECA72C]Arte y sonido[/color]
-[color=#E4FDE1]Moisés J. Bonilla Caraballo  ([url=\"https://moisesjose.com/\"]web[/url])[/color]
-
-[color=#ECA72C]Música[/color]
-[color=#E4FDE1]Alejandro Sánchez Medina ([url=\"https://github.com/alejandrosame\"]web[/url])[/color]
-[/center]
 [center][color=#ECA72C]Herramientas usadas[/color]
 [color=#E4FDE1]Godot Engine ([url=\"https://godotengine.org/\"]web[/url])[/color]
 [color=#E4FDE1]Coolors ([url=\"https://coolors.co/\"]web[/url])[/color]
+[color=#E4FDE1]GIMP ([url=\"https://www.gimp.org/\"]web[/url])[/color]
 
 [center][color=#ECA72C]Fuentes[/color]
-[color=#E4FDE1]Ubuntu font ([url=\"https://design.ubuntu.com/font/\"]web[/url])[/color]"
-text = "Idea, diseño y programación
+[color=#E4FDE1]Ubuntu font ([url=\"https://design.ubuntu.com/font/\"]web[/url])[/color]
+[/center]"
+text = "Idea, diseño, programación y arte
 Moisés J. Bonilla Caraballo  (web)
-
-Arte y sonido
-Moisés J. Bonilla Caraballo  (web)
-
-Música
-Alejandro Sánchez Medina (web)
 
 Herramientas usadas
 Godot Engine (web)
 Coolors (web)
+GIMP (web)
 
 Fuentes
-Ubuntu font (web)"
+Ubuntu font (web)
+"
 
 [node name="return_to_main_menu_button" parent="center_container/panel/margin_container/vbox_container" instance=ExtResource( 4 )]
 margin_top = 550.0
