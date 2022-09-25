@@ -63,7 +63,7 @@ func reset():
 func activate_trick():
 	if trick_type == TrickType.MOVING_BALL:
 		get_random_ball().move()
-	elif trick_type == TrickType.RESIZE_BALL:
+	elif trick_type == TrickType.HIGHLIGHT_BALL:
 		var random_ball = get_random_ball()
 		for ball in $balls.get_children():
 			if ball != random_ball:
