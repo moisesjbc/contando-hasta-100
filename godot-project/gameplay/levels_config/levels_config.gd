@@ -42,7 +42,8 @@ var _level_configs = {
 		LevelConfigKey.N_EXTRA_VALUES: 3
 	},
 	6: {
-		LevelConfigKey.HINT: "No sé si lo sabes pero este juego gira en torno al tema \"De 0 a 100\"\n¿Tienes alguna sospecha de a qué número tenemos que llegar?",
+		LevelConfigKey.HINT: "No sé si lo sabes pero este juego se llama \"Contando hasta 100\".\n¿Tienes alguna sospecha de a qué número tenemos que llegar?",
+		LevelConfigKey.GAME_OVER_TAUNT: "Si lo llego a saber no pregunto nada"
 	},
 	7: {
 		LevelConfigKey.HINT: "Imagino que lo sospechas, pero vayamos poco a poco.\n¿Qué tal si te dejo un momentito a solas y nos vemos en el 10?",
@@ -109,9 +110,17 @@ var _level_configs = {
 		LevelConfigKey.TRICK: TrickType.HIGHLIGHT_BALL,
 		LevelConfigKey.GAME_OVER_TAUNT: "Parece que el tamaño importa después de todo"
 	},
+	76: {
+		LevelConfigKey.HINT: "¡Solo queda un cuarto del camino! ¡Vamos!"
+	},
 	85: {
 		LevelConfigKey.TRICK: TrickType.BLINKING_BALLS,
 		LevelConfigKey.GAME_OVER_TAUNT: "¡Si parapadeas te lo pierdes! :-D"
+	},
+	91: {
+		LevelConfigKey.HINT: "¡LA RECTA FINAL!\n¡Revienta ese 90 y VAMOOOOS!",
+		LevelConfigKey.GAME_OVER_TAUNT: "¿Pero por qué no me dices que el 90 ya lo habías pulsado? D:",
+		LevelConfigKey.GAME_OVER_TAUNT_VALUE: 90
 	}
 }
 
