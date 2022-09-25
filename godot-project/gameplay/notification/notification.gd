@@ -18,3 +18,4 @@ func set_active(active: bool, value: int):
 	if active:
 		$notification_background/animation_player.play("appearance")
 		$notification_background/label.text = "¡IMPORTANTE!\n" + notification_messages[randi() % len(notification_messages)] % value
+		$notification_sound.play()
