@@ -66,7 +66,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center][color=#ECA72C]Idea, diseño, programación y arte[/color]
+bbcode_text = "[center][color=#ECA72C]Idea, diseño, programación, arte y efectos de sonido[/color]
 [color=#E4FDE1]Moisés J. Bonilla Caraballo - [url=\"https://www.moisesjose.com/\"]https://www.moisesjose.com/[/url][/color]
 
 [center][color=#ECA72C]Herramientas usadas[/color]
@@ -78,7 +78,7 @@ bbcode_text = "[center][color=#ECA72C]Idea, diseño, programación y arte[/color
 [center][color=#ECA72C]Fuentes[/color]
 [color=#E4FDE1]Ubuntu font - [url=\"https://design.ubuntu.com/font/\"]https://design.ubuntu.com/font/[/url][/color]
 [/center]"
-text = "Idea, diseño, programación y arte
+text = "Idea, diseño, programación, arte y efectos de sonido
 Moisés J. Bonilla Caraballo - https://www.moisesjose.com/
 
 Herramientas usadas
