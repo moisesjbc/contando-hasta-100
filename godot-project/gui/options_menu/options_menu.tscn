@@ -47,7 +47,7 @@ custom_constants/separation = 15
 
 [node name="title" type="Label" parent="center_container/panel/margin_container/vbox_container"]
 margin_right = 960.0
-margin_bottom = 176.0
+margin_bottom = 91.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
@@ -56,9 +56,9 @@ align = 1
 valign = 1
 
 [node name="sfx_volume_container" type="VBoxContainer" parent="center_container/panel/margin_container/vbox_container"]
-margin_top = 191.0
+margin_top = 106.0
 margin_right = 960.0
-margin_bottom = 295.0
+margin_bottom = 210.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
@@ -89,6 +89,28 @@ margin_right = 960.0
 margin_bottom = 50.0
 text = "Reproducir"
 
+[node name="music_volume_container" type="VBoxContainer" parent="center_container/panel/margin_container/vbox_container"]
+margin_top = 225.0
+margin_right = 960.0
+margin_bottom = 295.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="label" type="Label" parent="center_container/panel/margin_container/vbox_container/music_volume_container"]
+margin_right = 960.0
+margin_bottom = 34.0
+custom_colors/font_color = Color( 0.92549, 0.654902, 0.172549, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Volumen música"
+
+[node name="slider" type="HSlider" parent="center_container/panel/margin_container/vbox_container/music_volume_container"]
+margin_top = 54.0
+margin_right = 960.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 550, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="main_menu_button" parent="center_container/panel/margin_container/vbox_container" instance=ExtResource( 4 )]
 margin_top = 310.0
 margin_right = 960.0
@@ -96,4 +118,5 @@ margin_bottom = 360.0
 text = "Menú principal"
 
 [connection signal="value_changed" from="center_container/panel/margin_container/vbox_container/sfx_volume_container/hbox_container/slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="center_container/panel/margin_container/vbox_container/music_volume_container/slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="center_container/panel/margin_container/vbox_container/main_menu_button" to="." method="_on_main_menu_button_pressed"]

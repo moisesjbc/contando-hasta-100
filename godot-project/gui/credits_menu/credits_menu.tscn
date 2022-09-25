@@ -69,6 +69,9 @@ bbcode_enabled = true
 bbcode_text = "[center][color=#ECA72C]Idea, diseño, programación, arte y efectos de sonido[/color]
 [color=#E4FDE1]Moisés J. Bonilla Caraballo - [url=https://www.moisesjose.com/]https://www.moisesjose.com[/url][/color]
 
+[center][color=#ECA72C]Música[/color]
+[color=#E4FDE1]Alejandro Sánchez Medina - [url=\"https://github.com/alejandrosame\"]https://github.com/alejandrosame[/url][/color]
+
 [center][color=#ECA72C]Herramientas usadas[/color]
 [color=#E4FDE1]Godot Engine - [url=https://godotengine.org/]https://godotengine.org[/url][/color]
 [color=#E4FDE1]Coolors - [url=https://coolors.co]https://coolors.co[/url][/color]
@@ -80,6 +83,9 @@ bbcode_text = "[center][color=#ECA72C]Idea, diseño, programación, arte y efect
 [/center]"
 text = "Idea, diseño, programación, arte y efectos de sonido
 Moisés J. Bonilla Caraballo - https://www.moisesjose.com
+
+Música
+Alejandro Sánchez Medina - https://github.com/alejandrosame
 
 Herramientas usadas
 Godot Engine - https://godotengine.org
