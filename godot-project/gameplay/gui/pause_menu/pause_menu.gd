@@ -15,11 +15,10 @@ func _on_return_to_main_menu_button_pressed():
 	get_tree().change_scene("res://gui/main_menu/main_menu.tscn")
 	
 
-
-func _on_restart_button_pressed():
-	set_paused(true)
-
-
 func _input(event):
 	if not get_tree().paused and event is InputEventKey and event.scancode == KEY_ESCAPE:
 		set_paused(true) 
+
+
+func _on_pause_button_pressed():
+	set_paused(true)

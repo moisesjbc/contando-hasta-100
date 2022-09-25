@@ -16,6 +16,7 @@ run/main_scene="res://gui/main_menu/main_menu.tscn"
 [autoload]
 
 trick_type="*res://globals/trick_type.gd"
+button_pressed_sound="*res://globals/button_pressed_sound/button_pressed_sound.tscn"
 
 [display]
 

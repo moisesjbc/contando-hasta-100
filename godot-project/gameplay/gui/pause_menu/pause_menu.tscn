@@ -43,7 +43,7 @@ custom_constants/separation = 20
 
 [node name="title" type="Label" parent="center_container/panel/margin_container/vbox_container"]
 margin_right = 560.0
-margin_bottom = 65.0
+margin_bottom = 45.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
@@ -52,9 +52,9 @@ align = 1
 valign = 1
 
 [node name="resume_game_button" parent="center_container/panel/margin_container/vbox_container" instance=ExtResource( 3 )]
-margin_top = 75.0
+margin_top = 65.0
 margin_right = 560.0
-margin_bottom = 125.0
+margin_bottom = 115.0
 text = "Volver al juego"
 
 [node name="return_to_main_menu_button" parent="center_container/panel/margin_container/vbox_container" instance=ExtResource( 3 )]
@@ -64,16 +64,12 @@ margin_bottom = 185.0
 text = "Menú principal"
 
 [node name="pause_button" parent="." instance=ExtResource( 3 )]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -1269.0
-margin_top = -60.0
-margin_right = -1149.0
-margin_bottom = -10.0
+margin_left = 6.0
+margin_top = 663.0
+margin_right = 122.0
+margin_bottom = 713.0
 text = "Pausa"
 
 [connection signal="pressed" from="center_container/panel/margin_container/vbox_container/resume_game_button" to="." method="_on_resume_game_button_pressed"]
 [connection signal="pressed" from="center_container/panel/margin_container/vbox_container/return_to_main_menu_button" to="." method="_on_return_to_main_menu_button_pressed"]
-[connection signal="pressed" from="pause_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="pause_button" to="." method="_on_pause_button_pressed"]
