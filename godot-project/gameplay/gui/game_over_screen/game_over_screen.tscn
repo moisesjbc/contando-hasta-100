@@ -31,10 +31,10 @@ script = ExtResource( 3 )
 
 [node name="panel" type="Panel" parent="."]
 margin_left = 340.0
-margin_top = 185.0
+margin_top = 160.0
 margin_right = 940.0
-margin_bottom = 535.0
-rect_min_size = Vector2( 600, 350 )
+margin_bottom = 560.0
+rect_min_size = Vector2( 600, 400 )
 custom_styles/panel = SubResource( 4 )
 
 [node name="margin_container" type="MarginContainer" parent="panel"]
@@ -49,7 +49,7 @@ custom_constants/margin_bottom = 30
 margin_left = 30.0
 margin_top = 30.0
 margin_right = 570.0
-margin_bottom = 320.0
+margin_bottom = 370.0
 custom_constants/separation = 10
 
 [node name="title" type="Label" parent="panel/margin_container/vbox_container"]
@@ -62,7 +62,7 @@ align = 1
 [node name="summary" type="Label" parent="panel/margin_container/vbox_container"]
 margin_top = 44.0
 margin_right = 540.0
-margin_bottom = 132.0
+margin_bottom = 127.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
 text = "¡Has llegado al 0!"
@@ -71,9 +71,9 @@ valign = 1
 autowrap = true
 
 [node name="taunt" type="Label" parent="panel/margin_container/vbox_container"]
-margin_top = 142.0
+margin_top = 137.0
 margin_right = 540.0
-margin_bottom = 230.0
+margin_bottom = 220.0
 size_flags_vertical = 3
 custom_colors/font_color = Color( 0.992157, 0.878431, 0.764706, 1 )
 custom_fonts/font = SubResource( 3 )
@@ -82,5 +82,14 @@ valign = 1
 autowrap = true
 
 [node name="restart_button" parent="panel/margin_container/vbox_container" instance=ExtResource( 2 )]
+margin_top = 230.0
+margin_bottom = 280.0
+text = "Intentar de nuevo"
+
+[node name="main_menu_button" parent="panel/margin_container/vbox_container" instance=ExtResource( 2 )]
+margin_top = 290.0
+margin_bottom = 340.0
+text = "Menú principal"
 
 [connection signal="pressed" from="panel/margin_container/vbox_container/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="panel/margin_container/vbox_container/main_menu_button" to="." method="_on_main_menu_button_pressed"]

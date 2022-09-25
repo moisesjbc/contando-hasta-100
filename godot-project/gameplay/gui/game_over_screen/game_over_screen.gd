@@ -30,3 +30,9 @@ func _on_restart_button_pressed():
 	get_tree().paused = false
 	visible = false
 	main.set_level(main.first_level)
+
+
+func _on_main_menu_button_pressed():
+	get_tree().paused = false
+	visible = false
+	get_tree().change_scene("res://gui/main_menu/main_menu.tscn")
