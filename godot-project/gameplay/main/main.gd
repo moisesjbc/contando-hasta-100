@@ -7,13 +7,14 @@ var current_level_config = {}
 const TrickType = preload("res://globals/trick_type.gd").TrickType
 var LevelConfigKey = preload("res://gameplay/levels_config/levels_config.gd").LevelConfigKey
 
+export (int) var first_level = 0
+
+
 func _ready():
-	set_level(current_level)
-	# TODO: Remove development trick
-	for i in range(0, 64):
+	for i in range(0, first_level):
 		current_level = i
 		$levels_config.get_level_config(i)
-	set_level(64)
+	set_level(first_level)
 	
 	
 func reset_hint():
