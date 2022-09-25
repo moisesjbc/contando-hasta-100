@@ -138,7 +138,7 @@ func get_level_config(current_level_index: int):
 			print("NEW LevelConfigKey.TRICK ", current_level_config[LevelConfigKey.TRICK])
 	if not current_level_config[LevelConfigKey.TRICK]:
 		var valid_tricks = [] + accumulated_tricks
-		if LevelConfigKey.HINT in current_level_config:
+		if current_level_config[LevelConfigKey.HINT] != null:
 			valid_tricks.erase(TrickType.HINT_TEXT)
 		
 		if len(valid_tricks):
