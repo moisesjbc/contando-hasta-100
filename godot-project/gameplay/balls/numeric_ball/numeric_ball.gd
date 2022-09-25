@@ -17,8 +17,10 @@ func _on_numeric_ball_input_event(_viewport, event, _shape_idx):
 	if (event is InputEventMouseButton && event.pressed):
 		if value == expected_value:
 			$animation_player.play("right_selection")
+			$right_ball_selected.play()
 		else:
 			$animation_player.play("wrong_selection")
+			$wrong_ball_selected.play()
 		$selection_timeout.start(1.0)
 
 
