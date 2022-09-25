@@ -67,28 +67,28 @@ size_flags_vertical = 3
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "[center][color=#ECA72C]Idea, diseño, programación y arte[/color]
-[color=#E4FDE1]Moisés J. Bonilla Caraballo  ([url=\"https://www.moisesjose.com/\"]web[/url])[/color]
+[color=#E4FDE1]Moisés J. Bonilla Caraballo - [url=\"https://www.moisesjose.com/\"]https://www.moisesjose.com/[/url][/color]
 
 [center][color=#ECA72C]Herramientas usadas[/color]
-[color=#E4FDE1]Godot Engine ([url=\"https://godotengine.org/\"]web[/url])[/color]
-[color=#E4FDE1]Coolors ([url=\"https://coolors.co/\"]web[/url])[/color]
-[color=#E4FDE1]GIMP ([url=\"https://www.gimp.org/\"]web[/url])[/color]
-[color=#E4FDE1]sfxr ([url=\"https://www.drpetter.se/project_sfxr.html\"]web[/url])[/color]
+[color=#E4FDE1]Godot Engine - [url=\"https://godotengine.org/\"]https://godotengine.org/[/url][/color]
+[color=#E4FDE1]Coolors - [url=\"https://coolors.co/\"]https://coolors.co/[/url][/color]
+[color=#E4FDE1]GIMP - [url=\"https://www.gimp.org/\"]https://www.gimp.org/[/url][/color]
+[color=#E4FDE1]sfxr - [url=\"https://www.drpetter.se/project_sfxr.html\"]https://www.drpetter.se/project_sfxr.html[/url][/color]
 
 [center][color=#ECA72C]Fuentes[/color]
-[color=#E4FDE1]Ubuntu font ([url=\"https://design.ubuntu.com/font/\"]web[/url])[/color]
+[color=#E4FDE1]Ubuntu font - [url=\"https://design.ubuntu.com/font/\"]https://design.ubuntu.com/font/[/url][/color]
 [/center]"
 text = "Idea, diseño, programación y arte
-Moisés J. Bonilla Caraballo  (web)
+Moisés J. Bonilla Caraballo - https://www.moisesjose.com/
 
 Herramientas usadas
-Godot Engine (web)
-Coolors (web)
-GIMP (web)
-sfxr (web)
+Godot Engine - https://godotengine.org/
+Coolors - https://coolors.co/
+GIMP - https://www.gimp.org/
+sfxr - https://www.drpetter.se/project_sfxr.html
 
 Fuentes
-Ubuntu font (web)
+Ubuntu font - https://design.ubuntu.com/font/
 "
 
 [node name="return_to_main_menu_button" parent="center_container/panel/margin_container/vbox_container" instance=ExtResource( 4 )]
