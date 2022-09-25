@@ -20,7 +20,13 @@ func _ready():
 func reset_hint():
 	var current_hint = current_level_config[LevelConfigKey.HINT]
 	if not current_hint and current_level_config[LevelConfigKey.TRICK] == TrickType.HINT_TEXT:
-		current_hint = "¡DALE CAÑA A ESE %d!" % get_random_number()
+		var hints = [
+			"¡DALE CAÑA A ESE %d!",
+			"¡NO LE DES AL %d!",
+			"Espero que no estés pensando en darle al %d ¬¬"
+		]
+		randomize()
+		current_hint = hints[randi() % len(hints)] % get_random_number()
 
 	$GUI/hint_panel.set_hint(current_hint)
 
